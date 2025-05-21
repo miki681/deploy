@@ -9,7 +9,7 @@ function App() {
   const [info, setInfo] = useState([]); // array of fetched data (10 cats of certain breed)
   const [error, setError] = useState("");
 
-  const api = "http://localhost:3003"; // backend (development server)
+  const api = import.meta.env.VITE_API_BACKEND || "http://localhost:3003"; // backend (development server)
 
   useEffect(() => {
     async function fetchTitle() {
