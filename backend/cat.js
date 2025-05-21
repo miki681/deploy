@@ -3,7 +3,7 @@ import { Router } from "express";
 
 const router = Router();
 
-router.get("/", getTitle); // /cat
+router.get("/", getTitle); 
 router.get("/:input", searchByBreed); // /cat/:input
 
 export default router;
