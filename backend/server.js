@@ -1,7 +1,14 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
+
+
+
+
 
 //* Middleware
 app.use(cors());
@@ -25,5 +32,10 @@ app.use((err, req, res, next) => {
 const port = 3003;
 
 app.listen(port, () => {
-  console.log(`server is listening @ ${port}`);
+
+  if (process.env.NODE_ENV === "development") {
+    console.log(`development: server is listening @ ${port}`);
+  } else {
+    console.log(`production: : server is listening @ ${port}`)
+  }
 });
